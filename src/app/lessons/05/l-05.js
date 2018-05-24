@@ -5,7 +5,7 @@
 	- Методи об'єктів
 	node src/app/lessons/05/l-05.js
 */
-
+/*
 'use strict';
 
 console.log('\nLesson 05 - Start');
@@ -49,7 +49,7 @@ console.log('\nLesson 05 - Start');
 // Використаємо його, щоб розширити для нашого використання існуючий об'єкт console.
 // Для цього створимо новий об'єкт consoleUpdate і додамо до нього корисні методи типу "заголовок" та "розділювач"
 // А потім додамо методи з consoleUpdate до console через Object.assign:
-
+*/
 function augmentConsole(root) {
 	const consoleUpdate = {
 		h1: function (arg) {
@@ -63,7 +63,7 @@ function augmentConsole(root) {
 }
 
 augmentConsole(this);
-
+/*
 // Перевіримо роботу розширеної консолі:
 console.h1('Objects in JavaScript'); // Показати сепаратор
 console.log('Creation and properties'); // Показати заголовок
@@ -340,7 +340,7 @@ console.log(a.constructor === Array); // true
 
 var n = new Number(3); // Не робіть так
 console.log(n.constructor === Number); // true
-
+*/
 //
 // Приклад: відображення конструктора об'єкта
 //
@@ -352,7 +352,7 @@ console.log(n.constructor === Number); // true
 console.h1('Tree constructor'); // просто заголовок
 
 function Tree(name) {
-	this.name = name;
+	console.log(this.name = name);
 }
 
 var theTree = new Tree('Redwood');
@@ -363,11 +363,11 @@ console.log('theTree.constructor === Tree: ' + (theTree.constructor === Tree));
 
 // Цей приклад показує у консолі наступне:
 
-// theTree.constructor is
-// function Tree(name) {
-// this.name = name;
+//theTree.constructor is
+//function Tree(name) {
+//this.name = name;
 // }
-
+/*
 // FIXME Змінити конструктор Tree так, щоб він виводив у консоль повідомлення про назву створюваного дерева.
 
 //
@@ -492,7 +492,7 @@ console.log(o.isPrototypeOf(Object.prototype)); // false
 console.log(Function.prototype.isPrototypeOf(Object)); // true: Object.constructor == Function
 
 
-
+*/
 
 console.h1('Lesson 05 - End');
 
@@ -523,7 +523,7 @@ console.h1('Task 05.01');
 // Запиши її назву у нову глобальну змінну 'createdByConstructor'.
 // TODO: пиши свій код тут:
 
-let createdByConstructor;
+let createdByConstructor = 'birthdayDate';
 
 if (createdByConstructor && createdByConstructor === 'birthdayDate') {
 	console.log('\n\tThanks! This task is done');
@@ -537,25 +537,26 @@ console.h1('Task 05.02');
 // TODO: пиши код тут:
 console.log('\n\tPlease implement this task and few tests to check it');
 
+
 // 05.02.1 Який з цих прикладів є невірним зразком створення та ініціалізації змінної:
 // 1. var a;
 // 2. var b = 10;
 // 3. const c = "20";
-// 4. d = function(){};
+// 4. d = function(){}; - невірний приклад
 // 
 // 
 // 05.02.2 Створи змінні наступних типів. Для тих типів, де це неможливо, напиши коментар "Типу не існує"
 // 
-// 1. string
-// 2. char
-// 3. int
-// 4. float
-// 5. boolean
-// 6. interface
-// 7. undefined
+// 1. string // var c = 10;
+// 2. char //"Типу не існує"
+// 3. int // "Типу не існує"
+// 4. float //"Типу не існує"
+// 5. boolean // var d = true;
+// 6. interface //"Типу не існує"
+// 7. undefined // var k;
 // 
 // 
-// 05.02.3 Знайди тут оператор строгого порівняння та випишіть його:
+// 05.02.3 Знайди тут оператор строгого порівняння та випишіть його:  4. ===
 // 
 // 1. 'use strict'
 // 2. ==
@@ -564,21 +565,21 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 5. EQ
 // 
 // 
-// 05.02.4 Який з цих виразів є помилковим?
+// 05.02.4 Який з цих виразів є помилковим? 1. x * y == z
 // 
 // 1. x * y == z
 // 2. x + y = z
 // 3. x = y + (z = i / (k = m * n))
 // 
 // 
-// 05.02.5 Який з цих операторів означає "логічне АБО"?
+// 05.02.5 Який з цих операторів означає "логічне АБО"? 1. ||
 // 
 // 1. ||
 // 2. OR
 // 3. |
 // 
 // 
-// 05.02.6 Який з цих операторів означає "логічне ТА"?
+// 05.02.6 Який з цих операторів означає "логічне ТА"? 3. &&
 // 
 // 1. AND
 // 2. and
@@ -586,13 +587,13 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 4. &
 // 
 // 
-// 05.02.7 Чи правда, що оператор ‘typeof’ використовується для:
+// 05.02.7 Чи правда, що оператор ‘typeof’ використовується для: 1. Отримання назви типу
 // 
 // 1. Отримання назви типу?
 // 2. Отримання посилання на констуктор?
 // 
 // 
-// 05.02.8 Які з цих прикладів є невірним використанням оператора умовного присвоєння?
+// 05.02.8 Які з цих прикладів є невірним використанням оператора умовного присвоєння? 1. var y = x := z | m;
 // 
 // 1. var y = x := z | m;
 // 2. var y = x : z ? m;
@@ -600,7 +601,7 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 
 // 
 // 
-// 05.02.9 Де тут — правильний функціональний вираз?
+// 05.02.9 Де тут — правильний функціональний вираз? 4. var y = function(){}
 // 
 // 1. (function w(){})()
 // 2. var function x(){}
@@ -609,7 +610,7 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 
 // 
 // 
-// 05.02.10 Де конкатенація рядків зроблена з помилкою?
+// 05.02.10 Де конкатенація рядків зроблена з помилкою? 2. "str1" ~ "str2"
 // 
 // 1. "str1" + "str2"
 // 2. "str1" ~ "str2"
@@ -624,7 +625,11 @@ console.h1('Task 05.03');
 
 // TODO: пиши код тут:
 console.log('\n\tPlease implement this task');
+function Tree(name) {
+	console.log(this.name = name);
+}
 
+var theTree = new Tree('Redwood');
 
 
 console.h1('Lesson 05 - Homework End');
