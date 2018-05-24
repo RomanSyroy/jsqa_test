@@ -5,7 +5,7 @@
 	- Методи об'єктів
 	node src/app/lessons/05/l-05.js
 */
-/*
+
 'use strict';
 
 console.log('\nLesson 05 - Start');
@@ -49,7 +49,6 @@ console.log('\nLesson 05 - Start');
 // Використаємо його, щоб розширити для нашого використання існуючий об'єкт console.
 // Для цього створимо новий об'єкт consoleUpdate і додамо до нього корисні методи типу "заголовок" та "розділювач"
 // А потім додамо методи з consoleUpdate до console через Object.assign:
-*/
 function augmentConsole(root) {
 	const consoleUpdate = {
 		h1: function (arg) {
@@ -63,7 +62,7 @@ function augmentConsole(root) {
 }
 
 augmentConsole(this);
-/*
+
 // Перевіримо роботу розширеної консолі:
 console.h1('Objects in JavaScript'); // Показати сепаратор
 console.log('Creation and properties'); // Показати заголовок
@@ -340,7 +339,7 @@ console.log(a.constructor === Array); // true
 
 var n = new Number(3); // Не робіть так
 console.log(n.constructor === Number); // true
-*/
+
 //
 // Приклад: відображення конструктора об'єкта
 //
@@ -352,7 +351,7 @@ console.log(n.constructor === Number); // true
 console.h1('Tree constructor'); // просто заголовок
 
 function Tree(name) {
-	console.log(this.name = name);
+	this.name = name;
 }
 
 var theTree = new Tree('Redwood');
@@ -367,7 +366,7 @@ console.log('theTree.constructor === Tree: ' + (theTree.constructor === Tree));
 //function Tree(name) {
 //this.name = name;
 // }
-/*
+
 // FIXME Змінити конструктор Tree так, щоб він виводив у консоль повідомлення про назву створюваного дерева.
 
 //
@@ -492,7 +491,6 @@ console.log(o.isPrototypeOf(Object.prototype)); // false
 console.log(Function.prototype.isPrototypeOf(Object)); // true: Object.constructor == Function
 
 
-*/
 
 console.h1('Lesson 05 - End');
 
