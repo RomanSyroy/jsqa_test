@@ -631,12 +631,17 @@ var matrix = [
 	[4, 5, 29, 3],
 	[2, 12, 4, 7]
 ];
-
-function findMaxInMatrix(mtx) {
-	
+var matrix2 = [];
+for(var i = 0; i < matrix.length; i++)
+{
+    matrix2 = matrix2.concat(matrix[i]);
 }
 
-var res = findMaxInMatrix(matrix);
+function findMaxInMatrix(mtx) {
+	Math.max.apply(null, mtx)
+}
+
+var res = findMaxInMatrix(matrix2);
 console.log(res);
 // Цей код тестує завдання:
 
