@@ -638,7 +638,7 @@ for(var i = 0; i < matrix.length; i++)
 }
 
 function findMaxInMatrix(mtx) {
-	Math.max.apply(null, mtx)
+	return Math.max.apply(null, mtx);
 }
 
 var res = findMaxInMatrix(matrix2);
