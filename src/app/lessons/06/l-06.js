@@ -164,9 +164,7 @@ const glo = 'glo site';
 	};
 	f2();
 	console.log("global scope: ", x);
-	// → inside f2  //TODO Why??? Because there is a difference between declaring a variabl inside a function and 
-	// and reassigning a new value to same old variable
-
+	// → inside f2 
 
 	//
 	// Вкладена область видимости - nested scope
@@ -320,20 +318,7 @@ const glo = 'glo site';
 	 * Почитати про функції:
 	 * http://eloquentjavascript.net/03_functions.html
 	 */
-	function getDaysToBirthday() {
-		// TODO: look for best syntax
-	
-	today=new Date();
-	var bDay=new Date(today.getFullYear(), 4, 30);
-	if (today.getMonth()==4 && today.getDate()>30) 
-	{
-		bDay.setFullYear(bDay.getFullYear()+1); 
-	}  
-	var one_day=1000*60*60*24;
-	return (Math.ceil((bDay.getTime()-today.getTime())/(one_day))+
-	" days to birthday!");
-	}
-	console.log(getDaysToBirthday());
+
 	//
 	// Домашня робота:
 	//
@@ -350,6 +335,14 @@ const glo = 'glo site';
 		birthdayDate: new Date(1976, 8, 24),
 		getDaysToBirthday: function () {
 			// TODO: look for best syntax
+				today=new Date();
+				var bDay=new Date(today.getFullYear(), 4, 30);
+				if (today.getMonth()==4 && today.getDate()>30) 
+				{
+					bDay.setFullYear(bDay.getFullYear()+1); 
+				}  
+				var one_day=1000*60*60*24;
+				return (Math.ceil((bDay.getTime()-today.getTime())/(one_day))+" days to birthday!");
 		},
 		getInfo: function () {
 			return this.name + ' ' + this.surname + ' ' + this.adress + ' ' + this.birthdayDate.toDateString();
@@ -364,21 +357,30 @@ const glo = 'glo site';
 	// TODO: пишіть свій код тут:
 
 	console.log('\nPlease implement this task');
+    
+	function cube(x) {
+		return x * x * x;
+	}
 
+	var cube = function (x) {
+		return x * x * x;
+	};
 
-
+	console.log("Cube of 8 is: ", cube(8));
 
 
 	console.log('\nTask 06.02');
 	// Points: 2
 
 	// Спробуй відповісти, не запускаючи код на виконнання: що код виведе у консоль?
-	// TODO: пиши відповідь тут:
+	// TODO: пиши відповідь тут: As I understand, there is a difference between declaring a variable inside a function and 
+	// (even with the same name) and reassigning a new value to same old(already declared in global sope) variable
+
 
 	console.log('\nPlease implement this task');
 
-	var global1 = 'global1';
-	var global2 = 'global2';
+	var global1 = 'global1'; 
+	var global2 = 'global2'; 
 
 	var function1 = function () {
 		var global1 = 'LOCAL1';
@@ -386,17 +388,10 @@ const glo = 'glo site';
 		console.log('log from function scope: \n', global1, '\n', global2);
 	};
 
-	function1();
+	function1(); // Local1 
+				// local2
 
-	console.log('log from global scope: \n', global1, '\n', global2);
-
-
-
-
-
-
-
-
+	console.log('log from global scope: \n', global1, '\n', global2); // global1   local2
 
 
 	console.log('\nTask 06.03');
@@ -406,6 +401,17 @@ const glo = 'glo site';
 	// з консолі показував LOCAL1 замість global1
 
 	// TODO: код тут:
+	var global1 = 'global1'; 
+	var global2 = 'global2'; 
+
+	var function1 = function () {
+		 global1 = 'LOCAL1';
+		 global2 = 'LOCAL2';
+		//console.log('log from function scope: \n', global1, '\n', global2);
+	};
+	function1(); 
+
+	console.log('log from global scope: \n', global1, '\n', global2); // Local1   local2
 
 	console.log('\nPlease implement this task');
 
@@ -425,6 +431,17 @@ const glo = 'glo site';
 	// з консолі показував global2 замість LOCAL2
 
 	// TODO: код тут:
+	var global1 = 'global1'; 
+	var global2 = 'global2'; 
+
+	var function1 = function () {
+		global1 = 'LOCAL1';
+		let global2 = 'LOCAL2';
+		//console.log('log from function scope: \n', global1, '\n', global2);
+	};
+	function1(); 
+
+	console.log('log from global scope: \n', global1, '\n', global2); // Local1   local2
 
 	console.log('\nPlease implement this task');
 
@@ -446,6 +463,28 @@ const glo = 'glo site';
 
 	// TODO: пишіть свій код тут:
 
+	function multiplier(factor) {
+		function multiplyBy(number) {
+			return number * factor;
+		};
+		return multiplyBy;
+	}
+
+	var twice = multiplier(2);
+
+	console.log(twice(5)); // 5 * 2
+
+//////////////////////////////////////////////////////////////////
+	function blackBox(hidden) {
+		function insider() {
+			return hidden;
+		};
+		return insider;
+	}
+    
+	var hiddenSecret = blackBox('secret');
+
+	console.log(hiddenSecret());
 	console.log('\nPlease implement this task');
 
 
