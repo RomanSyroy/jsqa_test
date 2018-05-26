@@ -148,23 +148,24 @@ const glo = 'glo site';
 	// мають доступ до локальної області видимості зовнішньої функції.
 
 	// Global x
-	var x = "outside";
+	let x = "outside";
 
-	var f1 = function () {
-		var x = "inside f1";
+	let f1 = function () {
+		let x = "inside f1";
 		console.log("f1 scope: ", x);
 	};
 	f1();
 	console.log("global scope: ", x);
 	// → outside
-
-	var f2 = function () {
-		x = "inside f2";
+	
+	let f2 = function () {
+		let x = "inside f2";
 		console.log("f2 scope: ", x);
 	};
 	f2();
 	console.log("global scope: ", x);
-	// → inside f2
+	// → inside f2  //TODO Why??? Because there is a difference between declaring a variabl inside a function and 
+	// and reassigning a new value to same old variable
 
 
 	//
@@ -319,8 +320,20 @@ const glo = 'glo site';
 	 * Почитати про функції:
 	 * http://eloquentjavascript.net/03_functions.html
 	 */
-
-
+	function getDaysToBirthday() {
+		// TODO: look for best syntax
+	
+	today=new Date();
+	var bDay=new Date(today.getFullYear(), 4, 30);
+	if (today.getMonth()==4 && today.getDate()>30) 
+	{
+		bDay.setFullYear(bDay.getFullYear()+1); 
+	}  
+	var one_day=1000*60*60*24;
+	return (Math.ceil((bDay.getTime()-today.getTime())/(one_day))+
+	" days to birthday!");
+	}
+	console.log(getDaysToBirthday());
 	//
 	// Домашня робота:
 	//
