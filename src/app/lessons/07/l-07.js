@@ -262,7 +262,7 @@
 	//
 
 	console.log('\nTask 07.01');
-	console.log('\n\t Please implement this task');
+	console.log('\n Чи є замиканнями обидві наведені нижче функції? Чому?');
 
 	// Points: 1
 	// Чи є замиканнями обидві наведені нижче функції? Чому?
@@ -274,7 +274,7 @@
 		var var1;
 		return function func1InternalFunc() {}
 	}
-
+	console.log('\n Так, тому що всі функції є замиканнями!');
 	// TODO: дай відповідь тут:
 
 	console.log('\nTask 07.02');
@@ -284,11 +284,14 @@
 	// Напиши функцію-замикання -- будь-яку.
 	// TODO: пиши код тут:
 
-	function sillyClosure() {
-		return this;
+	function sillyClosure(aBit) {
+		return function smartClosure() {
+			return aBit;
+		};
 	}
-
-	console.log(sillyClosure())
+	const sillyClosureResult = sillyClosure(100);
+	console.log(sillyClosure());
+	console.log(sillyClosureResult());
 
 	console.log('\nTask 07.03');
 	console.log('\n\t Please implement this task');
@@ -301,7 +304,19 @@
 		return false;
 	}
 
-	// TODO: пиши відповідь словами тут:
+	// TODO: пиши відповідь словами тут:  
+	// RIGHT
+	var myClosure = (function iAmClosure() {
+		var iAmEnclosed = 'secret';
+		return {
+		  someProperty: function innerFunction() {
+			var iAmAlsoEnclosed = ' - not any more!';
+			return iAmEnclosed + iAmAlsoEnclosed ;
+		  }
+		};
+	  }());	   
+	  console.log(myClosure.someProperty());
+
 	// WRONG 1:
 	function iAmClosureTwo() {
 		var iAmEnclosed = 'secret';
@@ -354,7 +369,8 @@
 		};
 
 		function accessEnclosed() {
-			return iAmEnclosed
+			var a = " - revealed";
+			return iAmEnclosed.property.concat(a);
 		}
 
 		return accessEnclosed;
@@ -362,6 +378,7 @@
 
 	var accessEnclosed = iAmClosureFour();
 	var disclosedInternalFour = accessEnclosed();
-
+	console.log(accessEnclosed);
+	console.log(disclosedInternalFour);
 })();
 // Завершення глобальної анонімної функції
