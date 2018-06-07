@@ -425,7 +425,7 @@
     // Напиши функцію useAnonymousCallback, що приймає параметр callback, і виклич її, 
     // передавши їй в якості параметра іменовану функцію.
     const useAnonymousCallback2 = callback => callback();
-    const definedFunction = a => console.log('hello to you too');
+    const definedFunction = () => console.log('hello to you too');
     useAnonymousCallback2(definedFunction);
  
     console.log('Please implement this task');
