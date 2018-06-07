@@ -438,6 +438,22 @@
     // Напиши код, що використовує цю конструкцію для того, щоб вивести у консоль
     // значення змінної enclosed через замикання.
     // TODO: пиши тут:
+/*
+    function workingCallback(funcWillBeHere) {
+        var enclosed = 1000;
+        funcWillBeHere(enclosed);
+    };
+    function otherNamedFunction(trueEnclosedParam) {
+        console.log(trueEnclosedParam);
+    };
+    workingCallback(otherNamedFunction);
+*/
+let workingCallback = (funcWillBeHere) =>{
+    var enclosed = 1000;
+    funcWillBeHere(enclosed);
+};
+let otherNamedFunction = (trueEnclosedParam) =>console.log(trueEnclosedParam);
+workingCallback(otherNamedFunction);
 
     console.log('Please implement this task');    
 
