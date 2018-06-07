@@ -424,10 +424,9 @@
     // Points: 2
     // Напиши функцію useAnonymousCallback, що приймає параметр callback, і виклич її, 
     // передавши їй в якості параметра іменовану функцію.
-    let b = "Summer";
-    const useAnonymousCallback = callback => callback();
-    const definedFunction = summer => console.log(summer + ' hello');
-    useAnonymousCallback(definedFunction(b));
+    const useAnonymousCallback2 = callback => callback();
+    const definedFunction = a => console.log('hello to you too');
+    useAnonymousCallback2(definedFunction);
  
     console.log('Please implement this task');
     
