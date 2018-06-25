@@ -64,7 +64,7 @@ Object.defineProperty(Ukraine, 'president', {
   enumerable: true
 });
 
-console.log("Done")
+console.log("Done");
 
 console.h2('Homework Task 11.03');
 // Points: 2
@@ -89,3 +89,4 @@ console.h2('Homework Task 11.05');
 // Define a getStartDate method on it and export it
 // Create a main applicaton module in the src/app/app.js file
 // Import the Course as a module into app module and print the Course start date to the console
+console.log("Done");
