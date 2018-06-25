@@ -44,20 +44,43 @@ const Ukraine = {};
 // which is enumerable, but not configurable and it's value cannot be changed.
 // Initial value of the property should be:
 // new Date('August 24, 1991 00:00:00');
+Object.defineProperty(Ukraine, 'birthDate', {
+  value: new Date('August 24, 1991 00:00:00'),
+  writable: false,
+  configurable: false,
+  enumerable: true
+});
+console.log("Done")
 
 console.h2('Homework Task 11.02');
 // Points: 1
 // Using Object.defineProperty method, define a new Ukraine property named 'president',
 // which is enumerable, configurable, and writable.
 // Initial value of the property should be 'Kravchuk'.
+Object.defineProperty(Ukraine, 'president', {
+  value: 'Kravchuk',
+  writable: true,
+  configurable: true,
+  enumerable: true
+});
+
+console.log("Done")
 
 console.h2('Homework Task 11.03');
 // Points: 2
 // Print the properties of the Ukraine to console object using a for...in loop
-
+for (let propertyName in Ukraine) {
+  console.log(propertyName, '=', Ukraine[propertyName]);
+}
 console.h2('Homework Task 11.04');
 // Points: 3
 // Print the properties of the Ukraine to console object using a for loop, Object.keys and Object.values
+const keysOfUkraine = Object.keys(Ukraine);
+const valuesOfUkraine = Object.values(Ukraine);
+
+for (let i = 0; i < keysOfUkraine.length; i++) {
+  console.log(keysOfUkraine[i], '=', valuesOfUkraine[i]);
+}
 
 console.h2('Homework Task 11.05');
 // Points: 4
