@@ -1,5 +1,22 @@
-//      src/app/app.js
-const courseIndex = require ('./course/index');
+// src/app/index.js
+require('./util/console');
+const config = require('./config/config');
+const course = require('./course/course');
 
-console.log(courseIndex.course.getStartDate()); 
+console.h1('App started');
+console.h1(course.getStartDate());
 
+const c = config.getInstance();
+
+c.loadConfig('app.config.json', (err, data) => {
+    let a = JSON.parse(data);
+    console.log(course.setStartDate(a.startDate));
+});
+
+
+
+const l1 = course.createLesson('Lesson 1', 'Theoretical');
+const l2 = course.createLesson('Lesson 2', 'Practical');
+
+l1.execute();
+l2.execute();
