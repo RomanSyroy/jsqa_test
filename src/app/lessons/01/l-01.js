@@ -394,7 +394,7 @@ console.log('\nLesson 01 - Homework:\n\n!!! Please answer the questions in this 
 
 // Task 01.04 - 2 points
 // Q: What complex data types are used in JS?
-// A: Object, Array, Function, Date, RegExp
+// A: Object
 
 // Task 01.05 - 3 points
 // Q: Please write a function which calculates the difference between two numbers
