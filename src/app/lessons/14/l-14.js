@@ -101,7 +101,8 @@
     // and log the found index to the console.
     // TIP: you don't need neither special characters nor flags to complete this task
     // TODO: write code here
-
-    myRegExpFunc(homeworkTwoTaskOneResult, /I've reviewed the l-02\.js file and I understand it/);
+    
+    let aStr = /I've reviewed the l-02\.js file and I understand it/;
+    console.log(homeworkTwoTaskOneResult.indexOf(homeworkTwoTaskOneResult.match(aStr)));
 
 }());

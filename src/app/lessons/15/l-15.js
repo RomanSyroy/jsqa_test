@@ -81,7 +81,7 @@
     // Task: review Slide # 23 from here...
     // https://docs.google.com/presentation/d/1qryoG2jeH5XMkkpx-imWl1EtpUnDmRh8dVnf7lfhJNo/edit?usp=sharing
     // ...and complete this phrase, replacing three dots [...] with needed word:
-    console.log('Parentheses around any part of the regular expression pattern causes that part of the matched substring to be ...');
+    console.log('Parentheses around any part of the regular expression pattern causes that part of the matched substring to be remenbered');
 
 
     console.h3('Homework Task 15.02. Points: 1');
