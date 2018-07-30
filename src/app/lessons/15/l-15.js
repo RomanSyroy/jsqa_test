@@ -5,7 +5,7 @@
 'use strict';
 
 (function () {
-    require('../../util/console');    
+    require('../../util/console');
 
     console.h1('Le**on 15. Regular expressions');
 
@@ -50,9 +50,9 @@
     console.log(str.match(regex), regex.lastIndex);
     console.log(str.match(regex), regex.lastIndex);
     console.log(str.match(regex), regex.lastIndex);
-    
+
     console.h3('String.prototype.match() [LOCAL]');
-    
+
     console.log(str.match(regexLocal), regexLocal.lastIndex);
     console.log(str.match(regexLocal), regexLocal.lastIndex);
     console.log(str.match(regexLocal), regexLocal.lastIndex);
@@ -64,7 +64,7 @@
     console.log(str.search(regex), regex.lastIndex);
     console.log(str.search(regex), regex.lastIndex);
     console.log(str.search(regex), regex.lastIndex);
-        
+
     console.h3('String.prototype.search() [LOCAL]');
     console.log(str.search(regexLocal), regexLocal.lastIndex);
     console.log(str.search(regexLocal), regexLocal.lastIndex);
@@ -93,7 +93,7 @@
     // Using RegExp.prototype.test method, check whether the given regexp can be found in the given string.
     // Output the result to the console.
     // TODO: Do your work here:
-
+    console.log(reg.test(phrase));
 
     console.h3('Homework Task 15.03. Points: 2');
     // Given is the same phrase as in previous task.
@@ -102,15 +102,28 @@
     // Using RegExp.prototype.test method, check how many times the given regexp can be found in the given string.
     // Output the result to the console.
     // TODO: Do your work here:
-
+    let a;
+    do {
+        a = regg.test(phrase);
+        if (a === true) {
+            console.log(a);
+        }
+    }
+    while (a === true)
 
     console.h3('Homework Task 15.04. Points: 3');
     // Let's practice RegExp.prototype.exec() method
     // Given is the same phrase and regular expressions 'regg', which uses global flag.
-    // Using RegExp.prototype.exec method;
-    
     // Using the RegExp.prototype.exec() method, list the indexes of all inclusions of this regexp in the string.
     // Output the result to the console.
     // TODO: Do your work here:
-
+    let b; let c = [];
+    do {
+        b = regg.exec(phrase);
+        if (isNaN(b)) {
+            c.push(b.index);
+        }
+    }
+    while (b !== null)
+    console.log(c.join(', '));
 }());
